@@ -1,0 +1,25 @@
+@import url('//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext');
+
+.pt-sans-forced {
+	position: relative;
+	display: inline-block!important;
+	font-family: "PT Sans";
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.pt-sans-forced.ruble:before {
+	content: "\20bd";
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}

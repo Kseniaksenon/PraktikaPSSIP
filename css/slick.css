@@ -1,0 +1,121 @@
+/* Основной контейнер слайдера */
+.slick-slider {
+    position: relative; /* Позиционирование относительно родителя */
+    display: block; /* Элемент отображается как блочный элемент */
+    box-sizing: border-box; /* Включает padding и border в ширину и высоту элемента */
+
+    /* Отключение выделения текста пользователем */
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    /* Отключение контекстного меню на сенсорных экранах */
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+
+    /* Ограничение действия для сенсорных экранов */
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+
+    /* Убирает подсветку при нажатии на элемент (для мобильных устройств) */
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Контейнер для видимых слайдов */
+.slick-list {
+    position: relative; /* Позиционирование относительно родителя */
+    display: block; /* Элемент отображается как блочный элемент */
+    overflow: hidden; /* Скрывает содержимое, выходящее за границы */
+    margin: 0; /* Обнуляет внешние отступы */
+    padding: 0; /* Обнуляет внутренние отступы */
+}
+
+.slick-list:focus {
+    outline: none; /* Убирает обводку при фокусе */
+}
+
+.slick-list.dragging {
+    cursor: pointer; /* Курсор меняется на указатель при перетаскивании */
+    cursor: hand; /* Альтернативный курсор для старых браузеров */
+}
+
+/* Трансформации для плавной анимации и аппаратного ускорения */
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+/* Контейнер для всех слайдов, который перемещается в пределах списка */
+.slick-track {
+    position: relative; /* Позиционирование относительно родителя */
+    top: 0; /* Начальная позиция сверху */
+    left: 0; /* Начальная позиция слева */
+    display: block; /* Элемент отображается как блочный элемент */
+    margin-left: auto; /* Центрирование по горизонтали */
+    margin-right: auto; /* Центрирование по горизонтали */
+}
+
+.slick-track:before,
+.slick-track:after {
+    display: table; /* Создает скрытую таблицу для clearfix */
+    content: ''; /* Псевдоэлементы для clearfix */
+}
+
+.slick-track:after {
+    clear: both; /* Очистка float-ов */
+}
+
+.slick-loading .slick-track {
+    visibility: hidden; /* Скрытие трека при загрузке */
+}
+
+/* Каждый отдельный слайд */
+.slick-slide {
+    display: none; /* По умолчанию слайды скрыты */
+    float: left; /* Слайды располагаются в строку (для горизонтального слайдера) */
+    height: 100%; /* Слайды заполняют высоту контейнера */
+    min-height: 1px; /* Минимальная высота для корректного отображения */
+}
+
+[dir='rtl'] .slick-slide {
+    float: right; /* Для слайдера с направлением текста справа налево */
+}
+
+/* Изображения внутри слайдов */
+.slick-slide img {
+    display: block; /* Изображения ведут себя как блочные элементы */
+}
+
+.slick-slide.slick-loading img {
+    display: none; /* Скрытие изображений при загрузке слайда */
+}
+
+.slick-slide.dragging img {
+    pointer-events: none; /* Отключение событий для изображений при перетаскивании */
+}
+
+/* После инициализации слайды отображаются */
+.slick-initialized .slick-slide {
+    display: block; /* Слайды становятся видимыми */
+}
+
+.slick-loading .slick-slide {
+    visibility: hidden; /* Скрытие слайдов при загрузке */
+}
+
+/* Для вертикального слайдера */
+.slick-vertical .slick-slide {
+    display: block; /* Слайды отображаются как блоки */
+    height: auto; /* Высота автоматически подстраивается */
+    border: 1px solid transparent; /* Границы для корректного отображения */
+}
+
+/* Скрытие стрелок навигации */
+.slick-arrow.slick-hidden {
+    display: none; /* Скрывает стрелки */
+}
